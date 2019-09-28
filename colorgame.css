@@ -1,0 +1,317 @@
+body{
+	background-color: #F5F5F5;
+    font-family: 'Raleway', sans-serif;
+	display: flex;
+	flex-flow: row nowrap;
+	padding: 0;
+	margin: 0;
+	height: 100vh;
+
+	--dark-color: #242424;
+	--accent-color: #929292;
+
+
+}
+#rightPanel, #leftPanel {
+	flex: 1;
+	height: 100vh;
+	display: flex;
+	flex-flow: column nowrap;
+	align-items: center;
+	justify-content: center;
+}
+
+#leftPanel{
+	order: 1;
+}
+
+#rightPanel{
+	order: 3;
+}
+
+#mainPanel{
+	order: 2;
+	height: 100%;
+	flex: 5;
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: center;
+	align-items: center;
+}
+
+#contentWrapper{
+	display: flex;
+	flex-flow: column nowrap;
+	align-items: center;
+	justify-items: center;
+}
+
+#container{
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	margin: 0 10% 10px 10%;
+	height: 100%;
+}
+
+.square{
+	width: 120px;
+	height: 120px; 
+	border-radius: 10px;
+	margin: 10px;
+	box-shadow: 3px 3px 10px #242424;
+}
+
+.square:hover{
+	box-shadow: inset 3px 3px 10px #242424;
+}
+
+#rules{
+	margin: 20px 10% 20px 10%;
+	font-size: 0.9em;
+}
+
+p{
+	color: var(--dark-color);
+	text-align: center;
+}
+
+#findTheColor{
+	font-weight: 900;
+	font-family: 'Roboto', sans-serif;
+	font-size: 20px;
+	color:  var(--accent-color);
+	margin-bottom: 0;
+}
+
+#colorname{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: 3em;
+    color: #242424;
+}
+
+button{
+	border: 2px solid var(--accent-color);
+	background: none;
+	font-size: 18px;
+	font-weight: bold;
+	cursor: pointer;
+	margin-top: 0px;
+	padding: 10px 20px;
+	color: var(--accent-color);
+	transition: 0.8s;
+	height: 80px;
+	position: relative;
+	overflow: hidden;
+	margin-bottom: 20px;
+}
+
+button:hover{
+	color: #fff;
+}
+
+button::before{
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 0%;
+	/* background-color: #3498db; */
+	background-color: var(--accent-color);
+	left: 0;
+	z-index: -1;
+	top: 0;
+	border-radius: 0 0 50% 50%;
+	transition: 0.8s;
+}
+
+button:hover::before{
+	height: 200%;
+}
+
+#plus, #minus {
+	cursor: pointer;
+	font-size: 2em;
+	font-family: 'Roboto', sans-serif;
+    font-weight: 900;
+    color: var(--accent-color);
+    margin: 0;
+}
+
+#plus:hover, #minus:hover{
+	transition: 0.3s;
+	color: var(--accent-color);
+}
+
+#plus{
+	font-size: 1.6em;
+}
+
+#mixButton{
+	cursor:pointer;
+}
+
+#number{
+	color: var(--dark-color);
+	font-size: 30px;
+	font-family: 'Roboto', sans-serif;
+    font-weight: 900;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#leftPanel p{
+	font-size: 30px;
+	font-family: 'Roboto', sans-serif;
+    font-weight: 900;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    /* margin: 0 10px; */
+    color: var(--accent-color);
+}
+
+#scoreWin, #scoreFail{
+	margin-right: 10px;
+	margin-left: 10px;
+}
+
+.plusOnePoint{
+	animation: colorchangeGreen 2s;
+    -webkit-animation: colorchangeGreen 2s;
+ }
+
+@keyframes colorchangeGreen {
+      0%   {color: var(--accent-color);}
+      25%  {color: green; opacity: 1;}
+      50%  {opacity: 0;}
+      100% {opacity:1;}
+}
+
+@-webkit-keyframes colorchangeGreen {
+      0%   {color: var(--accent-color);}
+      25%  {color: green; opacity: 1;}
+      50%  {opacity: 0;}
+      100% {opacity:1;}
+ }
+
+ .minusOnePoint{
+	animation: colorchangeRed 2s; 
+    -webkit-animation: colorchangeRed 2s;
+ }
+
+@keyframes colorchangeRed {
+      0%   {color: var(--accent-color);}
+	  25%  {color: red; opacity: 1;}
+      50%  {opacity: 0;}
+      100% {opacity:1;}
+}
+
+@-webkit-keyframes colorchangeRed {
+      0%   {color: var(--accent-color);}
+	  25%  {color: red; opacity: 1;}
+      50%  {opacity: 0;}
+      100% {opacity:1;}
+ }
+
+
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 99999; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.8);
+}
+ 
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 60%;
+}
+ 
+/* The Close Button */
+.closess {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+ 
+.closess:hover,
+.closess:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 700px) {
+	body{
+		flex-direction: column;
+		padding-top: 20px;
+	}
+
+	button{
+		margin-top: 20px;
+	}
+	#rules{
+		display: none;
+	}
+
+	#colorname{
+		font-size: 1.5em;
+		margin-right: 10px;
+		margin-left: 10px;
+	}
+
+	#mainPanel{
+		padding: 0;
+	}
+
+	
+
+	#contentWrapper{
+		margin-top: 0px;
+		margin-right: 10px;
+		margin-left: 10px;
+
+	}
+
+	.square {
+		width: 100px;
+		height: 100px;
+	}
+
+	#container {
+		margin: 20px 0 0 0;
+	}
+
+	#rightPanel, #leftPanel {
+		flex-direction: row;
+	}
+
+	#rightPanel{
+		order: 1;
+		height: 100%;
+		margin: auto;
+	}
+
+	#leftPanel{
+		order: 2;
+	}
+
+	#plus, #minus{
+		margin: 0 10px 0 10px;
+	}
+
+}

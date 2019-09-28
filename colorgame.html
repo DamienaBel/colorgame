@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Color Game</title>
+	<link href="colorgame.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Raleway|Roboto:700,900&display=swap" rel="stylesheet"> 
+</head>
+<body>
+	<div id = "leftPanel">
+		<p><span id = "scoreWin" >0</span>/<span id = "scoreFail" >0</span></p>
+	</div>
+	
+	<div id="mainPanel">
+		<div id="contentWrapper">
+			<p id="findTheColor">Find the color <br><span id="colorname"></span></p>
+			<p id="rules"> RGB is an additive color model, where "r" stays for the amount of red, "g" for the amount of green and "b" for the amount of blue within the final color. Mix green, blue and red in different proportions to get millions of colors! You can learn to recognize RGB colors fast by playing this game. Once it gets too easy you can change the amount of squares using buttons on the right side. Have fun! </p>
+			<div id="container">
+			</div>
+			<button id="mixButton">Restart the game</button>
+		</div>
+	</div>
+
+	<div id = "rightPanel">
+		<p id="minus">-</p> <p id="number">6</p><p id="plus">+</p>
+	</div>
+	
+<script src="colorgame.js"></script>
+</body>
+</html>
