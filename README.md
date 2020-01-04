@@ -1,3 +1,4 @@
-A simple game written with JavaScript, which helps to understand better heximal color codes.
+# Guess-the-color game
+A simple JS game, which helps to better understand heximal color codes.
 
 ![screenshot](/screenshot.png)
