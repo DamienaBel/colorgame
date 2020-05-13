@@ -1,4 +1,4 @@
-# Guess-the-color game
-A simple JS game, which helps to better understand RGB color codes.
+# Find-the-color
+RGB color code trainer.
 
 ![screenshot](/screenshot.png)
